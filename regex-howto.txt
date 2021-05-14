@@ -97,7 +97,7 @@ errorXXbad
 
 .           all characters
 \d          all digits
-\D			not a digit
+\D          not a digit
 \w          alphanumeric
 \W          not alphanumeric
 \h          matches any horizontal whitespace character (equivalent to [[:blank:]])
