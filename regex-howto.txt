@@ -88,9 +88,9 @@ errorXXbad
 4 - execute it (CTRL+F notepad++) 
 
 
-literals	matches		
-.			all characters
-\d			all digits
+literals    matches		
+.           all characters
+\d          all digits
 \D			not a digit
 \w			alphanumeric
 \W			not alphanumeric
