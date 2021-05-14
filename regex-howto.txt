@@ -99,11 +99,11 @@ literals	matches
 \S			matches any non-whitespace character (equivalent to [^\r\n\t\f\v ])
 \t			horizontal tab
 \r			carriage return
-\n 			linefeed
-^ 			beginning of the input
-$ 			end of the input
-\b 			find a word
-x|y 		find one or the other
+\n			linefeed
+^			beginning of the input
+$			end of the input
+\b			find a word
+x|y			find one or the other
 [^aeiou] 	Match any character that is NOT one of the characters aeiou 
 elvis 		Find elvis
 \belvis\b	Find elvis as a whole word
