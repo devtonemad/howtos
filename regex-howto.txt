@@ -87,33 +87,44 @@ errorXXbad
 'errorY*bad'
 4 - execute it (CTRL+F notepad++) 
 
+####       ####   #### ##  ### ###  ### ##     ##     ####      ## ##   
+ ##         ##    # ## ##   ##  ##   ##  ##     ##     ##      ##   ##  
+ ##         ##      ##      ##       ##  ##   ## ##    ##      ####     
+ ##         ##      ##      ## ##    ## ##    ##  ##   ##       #####   
+ ##         ##      ##      ##       ## ##    ## ###   ##          ###  
+ ##  ##     ##      ##      ##  ##   ##  ##   ##  ##   ##  ##  ##   ##  
+### ###    ####    ####    ### ###  #### ##  ###  ##  ### ###   ## ##   
 
-literals    matches		
 .           all characters
 \d          all digits
 \D			not a digit
-\w			alphanumeric
-\W			not alphanumeric
-\h			matches any horizontal whitespace character (equivalent to [[:blank:]])
-\s			single whitespace
-\S			matches any non-whitespace character (equivalent to [^\r\n\t\f\v ])
-\t			horizontal tab
-\r			carriage return
-\n			linefeed
-^			beginning of the input
-$			end of the input
-\b			find a word
-x|y			find one or the other
-[^aeiou] 	Match any character that is NOT one of the characters aeiou 
-elvis 		Find elvis
-\belvis\b	Find elvis as a whole word
+\w          alphanumeric
+\W          not alphanumeric
+\h          matches any horizontal whitespace character (equivalent to [[:blank:]])
+\s          single whitespace
+\S          matches any non-whitespace character (equivalent to [^\r\n\t\f\v ])
+\t          horizontal tab
+\r          carriage return
+\n          linefeed
+^           beginning of the input
+$           end of the input
+\b          find a word
+x|y         find one or the other
+[^aeiou]    Match any character that is NOT one of the characters aeiou 
+elvis       Find elvis
+\belvis\b   Find elvis as a whole word
 
-*			Repeat any number of times
-+			Repeat one or more times
-?			Repeat zero or one time
-{n}			Repeat n times
-{n,m}		Repeat at least n, but no more than m times
-{n,}		Repeat at least n times
+ dP"Yb  88   88    db    88b 88 888888 88 888888 88 888888 88""Yb .dP"Y8 
+dP   Yb 88   88   dPYb   88Yb88   88   88 88__   88 88__   88__dP `Ybo." 
+Yb b dP Y8   8P  dP__Yb  88 Y88   88   88 88""   88 88""   88"Yb  o.`Y8b 
+ `"YoYo `YbodP' dP""""Yb 88  Y8   88   88 88     88 888888 88  Yb 8bodP' 
+
+*           Repeat any number of times
++           Repeat one or more times
+?           Repeat zero or one time
+{n}         Repeat n times
+{n,m}       Repeat at least n, but no more than m times
+{n,}        Repeat at least n times
 
 
 ###  ##  ######   ##        #####   
