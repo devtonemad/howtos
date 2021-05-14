@@ -1,0 +1,175 @@
+######   #######   #####   #######  ###  ##  
+ ##  ##   ##   #  ##   ##   ##   #  ###  ##  
+ ##  ##   ##      ##        ##       #####   
+ #####    ####    ## ####   ####      ###    
+ ## ##    ##      ##   ##   ##       #####   
+ ## ##    ##   #  ##   ##   ##   #  ##  ###  
+#### ##  #######   #####   #######  ##  ###  
+-------------------------------------------
+-        RegEx - Regular Expressions      -
+-------------------------------------------
+
+ #######  #######  ####### 
+ ##   ##  ##   ##  ##   ## 
+      ##       ##       ## 
+   #####    #####    ##### 
+                           
+   ##       ##       ##    
+   ##       ##       ##    
+
+Q: What is a RegEx?
+A: A regular expression is a sequence of characters that specifies a search pattern. WIKIPEDIA
+
+Q: For what is it used for?	  
+A: Searching text documents or logfiles for patterns and occurences. Validation of user input (e.g. password-structure, email adress). 	  
+   
+Q: Is RegEx a programming language?
+A: No, it's a description of a pattern that is parsed. But all popular programming languages come with a regex engine like Java, Python, C# ... and also Linux commands have a regex egine like grep, sed, awk etc.
+
+ ________  _ ____  _      ____  _     _____ ____ 
+/  __/\  \///  _ \/ \__/|/  __\/ \   /  __// ___\
+|  \   \  / | / \|| |\/|||  \/|| |   |  \  |    \
+|  /_  /  \ | |-||| |  |||  __/| |_/\|  /_ \___ |
+\____\/__/\\\_/ \|\_/  \|\_/   \____/\____\\____/
+
+password matching
+-----------------
+regex : ^(.{0,7}|[^0-9]*|[^A-Z]*|[^a-z]*|[a-zA-Z0-9]*)$
+description: Anything with less than eight characters OR anything with no numbers OR anything with no uppercase OR or anything with no lowercase OR anything with no special characters. If anything matches that, then it's an invalid password.
+
+search pattern
+--------------
+regex : ^([AEIOU].*[l]{2})
+description: finds all lines in the text below that start with an capital vocal and have double "ll" inside.
+
+Der Zauberlehrling
+Hat der alte Hexenmeister
+Sich doch einmal wegbegeben!
+Und nun sollen seine Geister
+Auch nach meinem Willen leben.
+Seine Wort' und Werke
+Merkt ich und den Brauch,
+Und mit Geistesstärke
+Tu' ich Wunder auch.
+Walle! walle
+Manche Strecke,
+Daß, zum Zwecke,
+Wasser fließe,
+Und mit reichem, vollem Schwalle
+Zu dem Bade sich ergieße.
+
+	
+888888 88  88 88 88b 88 88  dP      db    88""Yb  dP"Yb  88   88 888888 
+  88   88  88 88 88Yb88 88odP      dPYb   88__dP dP   Yb 88   88   88   
+  88   888888 88 88 Y88 88"Yb     dP__Yb  88""Yb Yb   dP Y8   8P   88   
+  88   88  88 88 88  Y8 88  Yb   dP""""Yb 88oodP  YbodP  `YbodP'   88   
+
+1. What do you want to do?
+2. Can you see a pattern?
+3. Convert your thoughts to a regex.
+4. Run it.
+
+Textfile: 
+errorbad
+errorYYYbad
+errorYbad
+errorXbad
+errorXXbad
+
+1 - select only errorbad without X's
+2 - see the pattern 
+'error||bad' -> OK
+'error|YYY|bad' -> OK
+'error|Y|bad' -> OK
+'error|X|bad' -> NOK
+'error|XX|bad' -> NOK
+3 - generate a regex 
+'errorY*bad'
+4 - execute it (CTRL+F notepad++) 
+
+
+literals	matches		
+.			all characters
+\d			all digits
+\D			not a digit
+\w			alphanumeric
+\W			not alphanumeric
+\h			matches any horizontal whitespace character (equivalent to [[:blank:]])
+\s			single whitespace
+\S			matches any non-whitespace character (equivalent to [^\r\n\t\f\v ])
+\t			horizontal tab
+\r			carriage return
+\n 			linefeed
+^ 			beginning of the input
+$ 			end of the input
+\b 			find a word
+x|y 		find one or the other
+[^aeiou] 	Match any character that is NOT one of the characters aeiou 
+elvis 		Find elvis
+\belvis\b	Find elvis as a whole word
+
+*			Repeat any number of times
++			Repeat one or more times
+?			Repeat zero or one time
+{n}			Repeat n times
+{n,m}		Repeat at least n, but no more than m times
+{n,}		Repeat at least n times
+
+
+###  ##  ######   ##        #####   
+###  ##  ###  ##  ##       ###      
+###  ##  ###  ##  ##        #####   
+###  ##  #######  ##           ###  
+###  ##  ######   ##           ###  
+#######  ### ###  #######  #######  
+#######  ### ###  #######  #######  
+#######  ### ###  #######  ######   
+
+https://regexr.com/
+https://regex101.com/
+https://medium.com/swlh/regular-expressions-grouping-and-the-pipe-character-d78bff3d2b6
+https://staff.washington.edu/weller/grep.html
+https://linuxhint.com/grep_egrep_regex/
+https://www.regexcheatsheet.com/pdf/RegexCheatSheet-Meta-Python-PHP-Perl.pdf
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Cheatsheet
+https://www.codeproject.com/Articles/9099/The-30-Minute-Regex-Tutorial
+https://opentechtips.com/regex-tricks-remove-leading-and-trailing-white-spaces-in-notepad-and-vim/
+https://en.wikipedia.org/wiki/Regular_expression
+https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a?page=2&tab=active#tab-top
+https://www.textlog.de/18471.html
+https://ascii-generator.site/t/
+
+POSIX Standard IEEE 
+
+ __  __     ______     ______     __  __     ______    
+/\ \_\ \   /\  __ \   /\  ___\   /\ \/ /    /\  ___\   
+\ \  __ \  \ \  __ \  \ \ \____  \ \  _"-.  \ \___  \  
+ \ \_\ \_\  \ \_\ \_\  \ \_____\  \ \_\ \_\  \/\_____\ 
+  \/_/\/_/   \/_/\/_/   \/_____/   \/_/\/_/   \/_____/ 
+
+grep '[a-zA-Z]' sorcerer.txt
+grep '[a-zA-Z]' sorcerer.txt > sorcerer-reduced.txt
+grep '^$' sorcerer.txt
+grep '^$' sorcerer.txt -n
+grep '^$' sorcerer.txt -c
+egrep 'euch|nun' sorcerer.txt
+
+
+'^\s*$' removes empty lines with spaces
+    ^ is the beginning of string anchor.
+    $ is the end of string anchor.
+    \s is the whitespace character class.
+    * is zero-or-more repetition of.
+
+^$\r\n
+	removes empty lines 
+    ^ is the beginning of string anchor.
+    $ is the end of string anchor.
+	\r is carriage return
+	\n is linefeed
+
+^\s*
+	removes all leading whitespaces 
+	^ is the beginning of string anchor.
+	\s is the whitespace character class.
+    * is zero-or-more repetition of.
