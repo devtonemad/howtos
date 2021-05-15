@@ -101,7 +101,7 @@ errorXXbad
  ##  ##     ##      ##      ##  ##   ##  ##   ##  ##   ##  ##  ##   ##  
 ### ###    ####    ####    ### ###  #### ##  ###  ##  ### ###   ## ##   
 
-.           all characters
+.           all characters, standing alone this is just one character alone, but it can be combined with the quantifiers
 \d          all digits
 \D          not a digit
 \w          alphanumeric
