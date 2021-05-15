@@ -69,7 +69,7 @@ Zu dem Bade sich ergieße.
 3. Convert your thoughts to a regex.
 4. Run it.
 
-Textfile: 
+Textfile: regex-001.txt
 errorbad
 errorYYYbad
 errorYbad
@@ -85,7 +85,13 @@ errorXXbad
 'error|XX|bad' -> NOK
 3 - generate a regex 
 'errorY*bad'
-4 - execute it (CTRL+F notepad++) 
+4 a) execute it (CTRL+F notepad++) 
+  b) execute it in Linux (gitbash) via 
+     # grep errorY*bad regex-001.txt
+  c) exceute it in Java (JavaGrep.java) via 
+     # javac JavaGrep.java ; java JavaGrep "errorY*bad" regex-001.txt 
+     NOTE: you find the java code in the appendix at the end of the document
+
 
 ####       ####   #### ##  ### ###  ### ##     ##     ####      ## ##   
  ##         ##    # ## ##   ##  ##   ##  ##     ##     ##      ##   ##  
@@ -119,7 +125,7 @@ dP   Yb 88   88   dPYb   88Yb88   88   88 88__   88 88__   88__dP `Ybo."
 Yb b dP Y8   8P  dP__Yb  88 Y88   88   88 88""   88 88""   88"Yb  o.`Y8b 
  `"YoYo `YbodP' dP""""Yb 88  Y8   88   88 88     88 888888 88  Yb 8bodP' 
 
-*           Repeat any number of times
+*           Repeat any number of times, also zero times
 +           Repeat one or more times
 ?           Repeat zero or one time
 {n}         Repeat n times
@@ -184,3 +190,54 @@ egrep 'euch|nun' sorcerer.txt
 	^ is the beginning of string anchor.
 	\s is the whitespace character class.
     * is zero-or-more repetition of.
+
+
+  ###    ######   ######   ####     ###  ##  #####    #######  ###  ##  
+ #####   ###  ##  ###  ##  ##       ###  ##  ### ##     ###    ###  ##  
+ ## ##   ###  ##  ###  ##  #####    #### ##  ###  ##    ###    ###  ##  
+##   ##  #######  #######  ##       #######  ###  ##    ###      ####   
+##   ##  ######   ######   ##       #######  ### ###    ###      ####   
+## ####  ####     ####     #######  ### ###  #######  #######  #######  
+## ####  ####     ####     #######  ###  ##  #######  #######  ###  ##  
+## ####  ####     ####     #######  ###  ##  ######   #######  ###  ##  
+
+	
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class JavaGrep{
+
+	public static void main(String args[]) {
+
+		String regex = args[0];
+		String filename = args[1];
+		Pattern pattern = Pattern.compile(regex);
+
+		try {
+
+			FileReader fileReader = new FileReader(filename);
+			BufferedReader bufferedReader = new BufferedReader(fileReader);
+			String line;
+
+			while ((line = bufferedReader.readLine()) != null) {
+			
+				Matcher matcher = pattern.matcher(line);
+				
+				if (matcher.find()) {
+					System.out.println(line);
+				}
+			}
+
+			bufferedReader.close();
+			
+		} catch (IOException e) {
+			System.out.println("ERROR");
+			e.printStackTrace();
+		}
+		
+	}
+
+}
